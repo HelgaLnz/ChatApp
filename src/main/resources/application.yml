@@ -1,0 +1,14 @@
+spring:
+  data:
+    mongodb:
+      username: root
+      password: rootpassword
+      host: localhost
+      port: 27017
+      database: chat_app
+      authentication-database: admin
+server:
+  port: 8080
+
+chat.app.jwtSecret: eyJhbGciOiJIUzUxMiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkNoYXRBcHAiLCJleHAiOjE3MDY2NDI0MTUsImlhdCI6MTcwNjY0MjQxNX0.WFHUmc1HWomWLle5QuqPETj8fho1BGwCiySFbxqJK5Qk-wFiige_opXvMsBIBD2KFe-dfrx4ESOCQ0gXYRX1lQ
+chat.app.jwtExpirationMs: 86400000

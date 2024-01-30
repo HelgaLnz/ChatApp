@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <title>Chat Application</title>
+</head>
+<body>
+<div class="div-image-cover">
+    <img class="img" src="images/image1.jpg">
+</div>
+<div class="user-form" id="username-page">
+    <h2>Авторизация</h2>
+    <form id="usernameForm">
+        <label for="nickname">Логин:</label>
+        <input type="text" id="nickname" name="nickname" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        <div class="d-flex">
+            <label style="margin: 10px" class="text-nowrap align-content-end" for="checkBoxShowPassword">Показать пароль</label>
+            <input style="margin: 12px"  type="checkbox" id="checkBoxShowPassword" content="Show">
+        </div>
+
+        <button type="submit">Войти</button>
+    </form>
+</div>
+
+<div class="user-main-form">
+    <div class="chat-container hidden" id="chat-page">
+        <div class="users-list">
+            <div class="users-list-container">
+                <h2>Сотрудники</h2>
+                <ul id="connectedUsers">
+                </ul>
+            </div>
+            <div class="group-list-container">
+                <h2>Групповые чаты</h2>
+                <ul id="groupChats">
+                </ul>
+            </div>
+            <div>
+                <p id="connected-user-fullname"></p>
+                <div class="d-flex gap-lg-3 align-self-center">
+                    <button id="createGroupRoom" type="button"  style="background: var(--color-secondary)"
+                            class="btn-create-group-chat"
+                            >Создать чат</button>
+                    <button class="logout btn" type="button" id="logout">Выйти</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-area">
+            <div>
+                <h2 id="chat-username" content="xx"></h2>
+            </div>
+            <div class="chat-area" id="chat-messages">
+            </div>
+
+            <form id="messageForm" name="messageForm" class="hidden">
+                <div class="message-input">
+                    <input autocomplete="off" type="text" id="message" placeholder="Напишите сообщение...">
+                    <button>Отправить</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="modal fade" id="create-group-room-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Создание группового чата</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="inputNameGroupChat" class="col-form-label">Введите название группового чата:</label>
+                                <input type="text" class="form-control" id="inputNameGroupChat">
+                            </div>
+                            <div class="form-group">
+                                <label for="user-list" class="col-form-label">Выберите участников чата:</label>
+                                <div class=".users-list-container">
+                                    <ul id="user-list">
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-close-modal-window">Закрыть</button>
+                        <button type="button" class="btn btn-primary" id="btn-create-group-chat-modal">Создать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<script src="bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
